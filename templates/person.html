@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>欢迎，{{ name }}，{{ userid }}！</h1>
+    <h3>你的文章</h3>
+    {% for article in articles %}
+        <p><a href={{ url_for('read', article_id=article.id) }}>{{ article.title }}: {{ article.desc }}</a></p>
+    {% endfor %}
+
+    <a href={{ url_for('edit') }} class="btn btn-danger btn-block" role="button">写文章</a>
+{% endblock %}

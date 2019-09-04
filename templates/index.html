@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block content %}
+    <h1>Login</h1>
+    {% from 'bootstrap/form.html' import render_form %}
+    {{ render_form(form) }}
+    <a href="{{ url_for('register') }}" class="btn btn-danger btn-block" role="button">Register</a>
+{% endblock %}

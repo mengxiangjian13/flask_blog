@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    开始写文字
+    {% from 'bootstrap/form.html' import render_form_row %}
+
+    <form method="post">
+        {{ form.csrf_token() }}
+        {{ render_form_row([form.title]) }}
+        {{ render_form_row([form.subtitle]) }}
+        {{ render_form_row([form.content]) }}
+        {{ render_form_row([form.submit]) }}
+    </form>
+
+{% endblock %}

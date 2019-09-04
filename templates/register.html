@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    注册
+{% endblock %}
+
+{% block content %}
+    {% if code > 0 %}
+        <div class="alert alert-danger" role="alert">
+            User has already registered!
+        </div>
+    {% endif %}
+    <h1>Register</h1>
+    {% from 'bootstrap/form.html' import render_form %}
+    {{ render_form(form) }}
+{% endblock %}
